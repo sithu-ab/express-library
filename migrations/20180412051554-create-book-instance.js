@@ -1,4 +1,5 @@
 'use strict';
+
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('BookInstances', {
@@ -8,13 +9,22 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      BookId: {
+        type: Sequelize.INTEGER,
+        onDelete: 'CASCADE',
+        allowNull: false,
+        references: {
+          model: 'Books',
+          key: 'id'
+        }
+      },
       imprint: {
         type: Sequelize.STRING
       },
       status: {
         type: Sequelize.STRING
       },
-      due_date: {
+      dueDate: {
         type: Sequelize.DATE
       },
       createdAt: {

@@ -1,4 +1,5 @@
 'use strict';
+
 module.exports = (sequelize, DataTypes) => {
   var Book = sequelize.define('Book', {
     title: DataTypes.STRING,
@@ -6,8 +7,21 @@ module.exports = (sequelize, DataTypes) => {
     isbn: DataTypes.STRING,
     url: DataTypes.STRING
   }, {});
+
   Book.associate = function(models) {
     // associations can be defined here
+    Book.belongsTo(models.Author, {
+      onDelete: 'CASCADE',
+      foreignKey: {
+        allowNull: false
+      }
+    });
+    Book.hasMany(models.BookInstance);
+    Book.belongsToMany(models.Genre, {
+      through: 'BookGenres',
+      onDelete: 'CASCADE'
+    });
   };
+
   return Book;
 };

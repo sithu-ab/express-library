@@ -1,4 +1,5 @@
 'use strict';
+
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('Books', {
@@ -7,6 +8,15 @@ module.exports = {
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
+      },
+      AuthorId: {
+        type: Sequelize.INTEGER,
+        onDelete: 'CASCADE',
+        allowNull: false,
+        references: {
+          model: 'Authors',
+          key: 'id'
+        }
       },
       title: {
         type: Sequelize.STRING
