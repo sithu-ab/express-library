@@ -4,7 +4,7 @@ Inspired by [Node.js Express framework tutorial on Mozilla](https://developer.mo
 
 ## Installation
 
-    $ git clone https://github.com/cithukyaw/express-library.git
+    $ git clone https://github.com/sithu-ab/express-library.git
     $ cd express-library
     $ npm install
 
