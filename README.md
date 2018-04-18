@@ -19,3 +19,9 @@ Run migration:
 Run app:
 
     $ DEBUG=express-library:* npm run devstart
+
+## References
+
+- https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/Tutorial_local_library_website
+- https://github.com/sequelize/express-example
+- http://docs.sequelizejs.com
