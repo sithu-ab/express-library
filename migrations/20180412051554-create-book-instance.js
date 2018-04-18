@@ -9,7 +9,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      BookId: {
+      bookId: {
         type: Sequelize.INTEGER,
         onDelete: 'CASCADE',
         allowNull: false,

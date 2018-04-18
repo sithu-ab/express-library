@@ -9,7 +9,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      AuthorId: {
+      authorId: {
         type: Sequelize.INTEGER,
         onDelete: 'CASCADE',
         allowNull: false,

@@ -3,7 +3,7 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('BookGenres', {
-      BookId: {
+      bookId: {
         type: Sequelize.INTEGER,
         onDelete: 'CASCADE',
         allowNull: false,
@@ -12,7 +12,7 @@ module.exports = {
           key: 'id'
         }
       },
-      GenreId: {
+      genreId: {
         type: Sequelize.INTEGER,
         onDelete: 'CASCADE',
         allowNull: false,
