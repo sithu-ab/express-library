@@ -1,7 +1,21 @@
-var Book = require('../models/Book');
+var async = require('async');
+var models = require('../models');
 
 exports.index = function(req, res) {
-  res.render('index', { title: 'Local Library' });
+  async.parallel({
+    bookCount: function(callback) {
+      models.Book.count().then(count => {
+        callback(null, count);
+      });
+    },
+    authorCount: function(callback) {
+      models.Author.count().then(count => {
+        callback(null, count);
+      });
+    }
+  }, function(err, results) {
+    res.render('index', { title: 'Local Library', error: err, data: results });
+  });
 };
 
 // Display list of all books.
